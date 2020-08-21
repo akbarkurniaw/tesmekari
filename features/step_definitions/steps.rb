@@ -5,18 +5,13 @@ require 'rspec'
 driver = Selenium::WebDriver.for:chrome
 
 Given("open the website") do
-  driver.navigate.to "https://phptravels.com/demo/"
+  driver.navigate.to "https://www.amazon.com/"
+  driver.manage.window.maximize
 end
 
-Then("user click on main menu") do
-    driver.find_element(:link,'DEMO').click
-    driver.find_element(:link,'PRICING').click
-    driver.find_element(:xpath,'//*[@id="main-menu"]/ul/li[3]/span/span').click
-    driver.find_element(:xpath,'//*[@id="main-menu"]/ul/li[4]/span/span').click
-    driver.find_element(:xpath,'//*[@id="main-menu"]/ul/li[5]/span/span').click
-    driver.find_element(:xpath,'//*[@id="main-menu"]/ul/li[6]/span/span').click
-    driver.find_element(:xpath,'//*[@id="main-menu"]/ul/li[7]/span/span').click
-    driver.find_element(:link,'LOGIN').click
+Then("user click Sign in on main menu and click create your Amazon account") do
+    driver.find_element(:xpath,'/html[1]/body[1]/div[1]/header[1]/div[1]/div[1]/div[2]/div[1]/a[2]/div[1]/span[1]').click
+    driver.find_element(:xpath,'/html/body/div[1]/div[1]/div[2]/div/div[2]/div/span/span/a').click
     sleep(2)
 end
 
