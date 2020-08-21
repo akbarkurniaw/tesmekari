@@ -33,7 +33,6 @@ alert1 = wait.until {
   element if element.displayed?
 }
 puts "Success Verify Alert Wrong Password" if alert1.displayed?
-sleep(2)
 end
 
 When("user fill Sign In form with Unregistered email and Continue") do
